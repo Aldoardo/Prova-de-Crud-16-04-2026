@@ -1,4 +1,4 @@
-import { TarefaController } from "./controller/tarefa_controller.mjs";
+import { TarefaController } from "./tarefa_controller.mjs";
 
 const controller = new TarefaController();
 
