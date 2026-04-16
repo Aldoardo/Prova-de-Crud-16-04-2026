@@ -1,4 +1,4 @@
-import { Tarefa } from "./tarefa_model.mjs.mjs";
+import { Tarefa } from "./tarefa_model.mjs";
 import { TarefaService } from "./tarefa_service.mjs";
 
 export class TarefaController {
