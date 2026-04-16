@@ -1,4 +1,4 @@
-import { Tarefa } from "./tarefa_model.mjs.mjs";
+import { Tarefa } from "./tarefa_model.mjs";
 
 const KEY = "tarefas";
 
