@@ -1,0 +1,12 @@
+{
+  "name": "crud-tarefa",
+  "version": "1.0.0",
+  "description": "Crud Tarefa",
+  "license": "ISC",
+  "author": "Aldoardo Alves Pereira Neto",
+  "type": "module",
+  "main": "main.mjs",
+  "scripts": {
+      "start": "live-server --port=8080"
+  }
+}

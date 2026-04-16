@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Tarefas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            padding: 15px;
+        }
+
+        .container {
+            padding: 0 15px;
+        }
+
+        .tarefa-item {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+        }
+
+        .tarefa-item.concluida {
+            opacity: 0.6;
+        }
+
+        .tarefa-item.concluida .tarefa-texto {
+            text-decoration: line-through;
+            color: #6c757d;
+        }
+
+        .tarefa-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .tarefa-texto {
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .tarefa-acoes {
+            display: flex;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .tarefa-acoes .btn {
+            white-space: nowrap;
+            padding: 6px 12px;
+            font-size: 0.875rem;
+        }
+
+        .msg-vazia {
+            text-align: center;
+            color: #6c757d;
+            padding: 20px;
+        }
+
+        @media (max-width: 576px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 0 10px;
+            }
+
+            .tarefa-item {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 12px;
+                gap: 12px;
+            }
+
+            .tarefa-content {
+                width: 100%;
+            }
+
+            .tarefa-acoes {
+                width: 100%;
+                gap: 10px;
+            }
+
+            .tarefa-acoes .btn {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="max-width: 600px;">
+        <div class="card mt-5">
+            <div class="card-body">
+                <h1 class="card-title text-center mb-4">Minhas Tarefas</h1>
+
+                <div id="mensagemContainer"></div>
+
+                <div class="input-group mb-3">
+                    <input 
+                        type="text" 
+                        id="descricaoInput" 
+                        class="form-control"
+                        placeholder="Digite uma tarefa..."
+                    >
+                    <button class="btn btn-success" id="btnAdicionar" type="button">Adicionar</button>
+                </div>
+
+                <ul id="tarefasList" class="list-group">
+                    <li class="list-group-item msg-vazia">Nenhuma tarefa. Adicione uma!</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para editar tarefa -->
+    <div class="modal fade" id="editarModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar Tarefa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input 
+                        type="text" 
+                        id="descricaoEditar" 
+                        class="form-control"
+                        placeholder="Digite a nova descrição..."
+                    >
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="btnSalvarEdicao">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./main.mjs"></script>
+</body>
+</html>
