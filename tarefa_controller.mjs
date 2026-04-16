@@ -1,5 +1,5 @@
-import { Tarefa } from "../model/tarefa_model.mjs.mjs";
-import { TarefaService } from "../service/tarefa_service.mjs";
+import { Tarefa } from "./tarefa_model.mjs.mjs";
+import { TarefaService } from "./tarefa_service.mjs";
 
 export class TarefaController {
     constructor() {
